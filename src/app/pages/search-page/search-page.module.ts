@@ -11,6 +11,7 @@ import { SearchPageComponent } from './search-page.component';
 import { PageWrapperModule } from 'src/app/shared/components/page-wrapper/page-wrapper.module';
 import { CountryDetailsPanelModule } from 'src/app/shared/components/country-details-panel/country-details-panel.module';
 import { MapPanelModule } from 'src/app/shared/components/map-panel/map-panel.module';
+import { ErrorPanelModule } from 'src/app/shared/components/error-panel/error-panel.module';
 
 @NgModule({
   declarations: [SearchPageComponent],
@@ -25,6 +26,7 @@ import { MapPanelModule } from 'src/app/shared/components/map-panel/map-panel.mo
     CountryDetailsPanelModule,
     MapPanelModule,
     MatIconModule,
+    ErrorPanelModule,
   ],
 })
 export class SearchPageModule {}

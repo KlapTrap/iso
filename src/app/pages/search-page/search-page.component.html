@@ -13,6 +13,10 @@
     </div>
   </mat-toolbar>
   <div class="search-page" *ngIf="parsedResponse$ | async as response">
+    <app-error-panel
+      [code]="response.search"
+      *ngIf="response.error"
+    ></app-error-panel>
     <div *ngIf="response.country as country" class="search-page__content">
       <app-country-details-panel
         class="search-page__section"
