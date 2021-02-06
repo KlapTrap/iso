@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { SearchPageRoutingModule } from './search-page-routing.module';
 import { SearchPageComponent } from './search-page.component';
 import { PageWrapperModule } from 'src/app/shared/components/page-wrapper/page-wrapper.module';
+import { CountryDetailsPanelModule } from 'src/app/shared/components/country-details-panel/country-details-panel.module';
 
 @NgModule({
   declarations: [SearchPageComponent],
@@ -19,6 +20,7 @@ import { PageWrapperModule } from 'src/app/shared/components/page-wrapper/page-w
     MatCardModule,
     MatGridListModule,
     MatInputModule,
+    CountryDetailsPanelModule,
   ],
 })
 export class SearchPageModule {}

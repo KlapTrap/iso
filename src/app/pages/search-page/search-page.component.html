@@ -10,11 +10,15 @@
   </mat-toolbar>
   <div class="search-page">
     <div class="search-page__content">
-      <mat-card class="search-page__section">
+      <app-country-details-panel
+        class="search-page__section"
+        [country]="country$ | async"
+      ></app-country-details-panel>
+      <!-- <mat-card class="search-page__section">
         <mat-card-title>
           <h2>Details</h2>
         </mat-card-title>
-      </mat-card>
+      </mat-card> -->
       <mat-card class="search-page__section"></mat-card>
     </div>
   </div>
