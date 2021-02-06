@@ -1,11 +1,14 @@
 <app-page-wrapper>
   <mat-toolbar color="primary">
     <div class="search-page__header">
-      <input
-        class="search-page__header-search"
-        maxlength="3"
-        placeholder="Enter ISO Code"
-      />
+      <div class="search-page__header-search">
+        <mat-icon class="search-page__header-search-icon">search</mat-icon>
+        <input
+          class="search-page__header-search-input"
+          maxlength="3"
+          placeholder="Enter ISO Code"
+        />
+      </div>
     </div>
   </mat-toolbar>
   <div class="search-page" *ngIf="country$ | async as country">

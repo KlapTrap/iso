@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 import { SearchPageRoutingModule } from './search-page-routing.module';
 import { SearchPageComponent } from './search-page.component';
@@ -23,6 +24,7 @@ import { MapPanelModule } from 'src/app/shared/components/map-panel/map-panel.mo
     MatInputModule,
     CountryDetailsPanelModule,
     MapPanelModule,
+    MatIconModule,
   ],
 })
 export class SearchPageModule {}
