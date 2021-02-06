@@ -19,11 +19,12 @@
     width: 100%;
   }
   &__header-search {
-    text-align: center;
     height: 30px;
     width: 100%;
     max-width: 500px;
     padding: 2px 20px;
     font-size: 15px;
+    border-radius: 5px;
+    border: none;
   }
 }
