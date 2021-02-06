@@ -21,8 +21,8 @@ export class SearchPageComponent implements OnInit {
     incomeLevel: { id: 'UMC', iso2code: 'XT', value: 'Upper middle income' },
     lendingType: { id: 'IBD', iso2code: 'XF', value: 'IBRD' },
     capitalCity: 'Brasilia',
-    longitude: '-47.9292',
-    latitude: '-15.7801',
+    longitude: parseFloat('-47.9292'),
+    latitude: parseFloat('-15.7801'),
   });
   ngOnInit(): void {}
 }

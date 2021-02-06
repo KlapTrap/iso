@@ -8,18 +8,16 @@
       />
     </div>
   </mat-toolbar>
-  <div class="search-page">
+  <div class="search-page" *ngIf="country$ | async as country">
     <div class="search-page__content">
       <app-country-details-panel
         class="search-page__section"
         [country]="country$ | async"
       ></app-country-details-panel>
-      <!-- <mat-card class="search-page__section">
-        <mat-card-title>
-          <h2>Details</h2>
-        </mat-card-title>
-      </mat-card> -->
-      <mat-card class="search-page__section"></mat-card>
+      <app-map-panel
+        [center]="{ lat: country.latitude, lng: country.longitude }"
+      >
+      </app-map-panel>
     </div>
   </div>
 </app-page-wrapper>

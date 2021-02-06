@@ -4,7 +4,7 @@ export interface BaseEntityData {
   value: string;
 }
 
-export interface Country {
+export interface BaseCountry {
   name: string;
   id: string;
   iso2Code: string;
@@ -13,6 +13,14 @@ export interface Country {
   incomeLevel: BaseEntityData;
   lendingType: BaseEntityData;
   capitalCity: string;
+}
+
+export interface Country extends BaseCountry {
   longitude: string;
   latitude: string;
+}
+
+export interface CountryParsed extends BaseCountry {
+  longitude: number;
+  latitude: number;
 }
