@@ -1,0 +1,13 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__content {
+    flex: 1;
+    padding: 20px 20%;
+    overflow: auto;
+  }
+  &__header {
+    flex: none;
+  }
+}
