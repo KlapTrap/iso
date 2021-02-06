@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Subject } from 'rxjs';
+import { IsoDataService } from 'src/app/shared/services/iso-data.service';
+import { filter, switchMap, debounceTime, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-page',
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss'],
 })
-export class SearchPageComponent implements OnInit {
-  constructor() {}
-  public country$ = of({
-    id: 'BRA',
-    iso2Code: 'BR',
-    name: 'Brazil',
-    region: { id: 'LCN', iso2code: 'ZJ', value: 'Latin America & Caribbean ' },
-    adminregion: {
-      id: 'LAC',
-      iso2code: 'XJ',
-      value: 'Latin America & Caribbean (excluding high income)',
-    },
-    incomeLevel: { id: 'UMC', iso2code: 'XT', value: 'Upper middle income' },
-    lendingType: { id: 'IBD', iso2code: 'XF', value: 'IBRD' },
-    capitalCity: 'Brasilia',
-    longitude: parseFloat('-47.9292'),
-    latitude: parseFloat('-15.7801'),
-  });
-  ngOnInit(): void {}
+export class SearchPageComponent {
+  constructor(private isoService: IsoDataService) {}
+
+  public searchValue$$ = new Subject<string | null>();
+
+  public parsedResponse$ = this.searchValue$$.pipe(
+    debounceTime(250),
+    filter((value) => !!value && value.length > 1 && value.length < 4),
+    switchMap((value) => this.isoService.get(value as string))
+  );
+
+  public search(event: KeyboardEvent): void {
+    const target = event.target as HTMLInputElement;
+    this.searchValue$$.next(target.value);
+  }
 }
