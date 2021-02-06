@@ -2,7 +2,6 @@
   max-width: 1000px;
   min-height: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   &__content {
     max-height: 50%;
@@ -38,5 +37,9 @@
     position: absolute;
     color: black;
     opacity: 0.6;
+  }
+  &__header-search-spinner {
+    right: 10px;
+    position: absolute;
   }
 }

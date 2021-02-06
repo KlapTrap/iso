@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { of, Subject } from 'rxjs';
 import { IsoDataService } from 'src/app/shared/services/iso-data.service';
-import { filter, switchMap, debounceTime, tap } from 'rxjs/operators';
+import {
+  filter,
+  switchMap,
+  debounceTime,
+  distinctUntilChanged,
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-page',
@@ -11,9 +16,12 @@ import { filter, switchMap, debounceTime, tap } from 'rxjs/operators';
 export class SearchPageComponent {
   constructor(private isoService: IsoDataService) {}
 
+  public searching$ = this.isoService.busy$.pipe(debounceTime(250));
+
   public searchValue$$ = new Subject<string | null>();
 
   public parsedResponse$ = this.searchValue$$.pipe(
+    distinctUntilChanged(),
     debounceTime(250),
     filter((value) => !!value && value.length > 1 && value.length < 4),
     switchMap((value) => this.isoService.get(value as string))

@@ -9,6 +9,11 @@
           maxlength="3"
           placeholder="Enter ISO Code"
         />
+        <mat-spinner
+          *ngIf="searching$ | async"
+          diameter="20"
+          class="search-page__header-search-spinner"
+        ></mat-spinner>
       </div>
     </div>
   </mat-toolbar>
