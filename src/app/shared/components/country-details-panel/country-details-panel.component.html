@@ -5,7 +5,7 @@
       mat-card-avatar
       [style.background-image]="getCountryImageStyle(country!.iso2Code)"
     ></div>
-    <mat-card-title>{{ country?.name }}</mat-card-title>
+    <mat-card-title>{{ country!.name }}</mat-card-title>
     <mat-card-subtitle>Country</mat-card-subtitle>
   </mat-card-header>
   <mat-list class="country-details-panel__list">
@@ -40,4 +40,9 @@
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
+  <mat-card-actions align="end">
+    <a [href]="getWikipediaLink(country!.name)" target="_blank" mat-button>
+      Wikipedia
+    </a>
+  </mat-card-actions>
 </mat-card>

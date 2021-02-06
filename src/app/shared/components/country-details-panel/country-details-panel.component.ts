@@ -20,4 +20,7 @@ export class CountryDetailsPanelComponent {
   public getCountryImageStyle(iso2Code: string): string {
     return `url(https://www.countryflags.io/${iso2Code.toLowerCase()}/flat/64.png)`;
   }
+  public getWikipediaLink(name: string): string {
+    return `https://en.wikipedia.org/wiki/${name}`;
+  }
 }

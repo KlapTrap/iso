@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [CountryDetailsPanelComponent],
@@ -15,6 +16,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDividerModule,
     MatListModule,
     MatChipsModule,
+    MatButtonModule,
   ],
 })
 export class CountryDetailsPanelModule {}
