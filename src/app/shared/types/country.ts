@@ -1,6 +1,6 @@
 export interface BaseEntityData {
   id: string;
-  iso2Code: string;
+  iso2code: string;
   value: string;
 }
 
