@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CountryDetailsPanelComponent } from './country-details-panel.component';
+import { SearchPageModule } from 'src/app/pages/search-page/search-page.module';
 
 describe('CountryDetailsPanelComponent', () => {
   let component: CountryDetailsPanelComponent;
@@ -8,7 +9,7 @@ describe('CountryDetailsPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountryDetailsPanelComponent],
+      imports: [SearchPageModule],
     }).compileComponents();
   });
 
