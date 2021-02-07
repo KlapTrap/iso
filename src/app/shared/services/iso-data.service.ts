@@ -52,8 +52,8 @@ export class IsoDataService {
       return {
         country: {
           ...country,
-          longitude: parseFloat(country.longitude),
-          latitude: parseFloat(country.latitude),
+	  longitude: country.longitude ? parseFloat(country.longitude) : null,
+	  latitude: country.longitude ? parseFloat(country.longitude) : null,
         },
         error: false,
         search,

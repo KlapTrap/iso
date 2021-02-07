@@ -1,6 +1,7 @@
-<mat-card class="country-details-panel">
+<mat-card *ngIf="country" class="country-details-panel">
   <mat-card-header>
     <div
+      *ngIf="country!.iso2Code"
       class="country-details-panel__flag"
       mat-card-avatar
       [style.background-image]="getCountryImageStyle(country!.iso2Code)"
@@ -9,15 +10,17 @@
     <mat-card-subtitle>Country</mat-card-subtitle>
   </mat-card-header>
   <mat-list class="country-details-panel__list">
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <div>
-        <div class="country-details-panel__value-header">Capital City</div>
-        <div class="country-details-panel__value">
-          {{ country!.capitalCity }}
+    <div *ngIf="country!.capitalCity">
+      <mat-divider></mat-divider>
+      <mat-list-item>
+	<div>
+	  <div class="country-details-panel__value-header">Capital City</div>
+	  <div class="country-details-panel__value">
+	    {{ country!.capitalCity }}
+	  </div>
         </div>
-      </div>
-    </mat-list-item>
+      </mat-list-item>
+    </div>
     <mat-divider></mat-divider>
     <mat-list-item>
       <div>
@@ -28,19 +31,27 @@
       </div>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <mat-list-item>
-      <div>
-        <div class="country-details-panel__value-header">Longitude</div>
-        <div class="country-details-panel__value">{{ country!.longitude }}</div>
-      </div>
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <div>
-        <div class="country-details-panel__value-header">Latitude</div>
-        <div class="country-details-panel__value">{{ country!.latitude }}</div>
-      </div>
-    </mat-list-item>
+    <div *ngIf="country!.longitude">
+      <mat-list-item>
+	<div>
+	  <div class="country-details-panel__value-header">Longitude</div>
+	  <div class="country-details-panel__value">
+	    {{ country!.longitude }}
+	  </div>
+	</div>
+      </mat-list-item>
+    </div>
+    <div *ngIf="country!.latitude">
+      <mat-divider></mat-divider>
+      <mat-list-item>
+	<div>
+	  <div class="country-details-panel__value-header">Latitude</div>
+	  <div class="country-details-panel__value">
+	    {{ country!.latitude }}
+	  </div>
+	</div>
+      </mat-list-item>
+    </div>
     <mat-divider></mat-divider>
   </mat-list>
   <mat-card-actions align="end">
