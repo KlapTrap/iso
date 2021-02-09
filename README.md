@@ -2,26 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.3.
 
-## Development server
+## Tests
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng test` to run tests.
 
-## Code scaffolding
+## Application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Build
+Simply enter a iso code in the search panel to see information about the country you've searched for.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Tested in chrome.
 
-## Running unit tests
+Some future improvements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Improve tests
+   Test all components
+2. Responsive-ness
+   Minor tweaks to make the search page responsive
+3. Handle non-country iso codes
+   i.e sas - South Asia - The api can return partial data, in this case the app works but doesn't render the data very well.
+4. Better error handling
+   All errors are handled as 404s, server errors should be handled seperatly.
+5. Better user input validation
+   Is there a pattern to the iso codes? If so can we validate the input conforms to the standard?
+6. Cross-broswer testing
+   Only tested in chrome
